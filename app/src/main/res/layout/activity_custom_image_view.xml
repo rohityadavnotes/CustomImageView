@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signUpActivityParentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".CustomImageViewActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/circleRoundedImageHeadingTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Custom Image View"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_25sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/circleImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/circleRoundedImageHeadingTextView">
+
+                <com.custom.image.view.CircleImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="#d93cf1"
+                    app:civ_border_overlay="false"
+                    app:civ_border_width="@dimen/_1sdp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/imageView"
+                    android:layout_alignParentRight="true"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:backgroundTint="@color/colorAccent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:fabCustomSize="@dimen/_25sdp"
+                    app:srcCompat="@drawable/ic_add"
+                    app:tint="@android:color/white" />
+            </RelativeLayout>
+
+            <com.custom.image.view.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                android:src="@drawable/profile"
+                app:civ_border_color="#d93cf1"
+                app:civ_border_overlay="false"
+                app:civ_border_width="@dimen/_1sdp"
+                app:layout_constraintBottom_toTopOf="@+id/circleImageViewTwo"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+            <com.custom.image.view.CircleImageViewTwo
+                android:id="@+id/circleImageViewTwo"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                android:src="@drawable/profile"
+                app:border="@dimen/_2sdp"
+                app:border_color="@android:color/holo_red_light"
+                app:layout_constraintBottom_toTopOf="@+id/roundedCornerImageView"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+
+            <com.custom.image.view.RoundedCornerImageView
+                android:id="@+id/roundedCornerImageView"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/profile"
+                app:border="@dimen/_2sdp"
+                app:border_color="@android:color/holo_red_light"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageViewTwo"
+                app:radius="@dimen/_10sdp" />
+
+            <com.custom.image.view.ShapedImageView
+                android:id="@+id/circleShapedImageView"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/profile"
+                app:layout_constraintBottom_toTopOf="@+id/rectShapedImageView"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/roundedCornerImageView"
+                app:round_radius="8dp"
+                app:shape_mode="circle"
+                app:stroke_color="#009688"
+                app:stroke_width="3dp" />
+
+            <com.custom.image.view.ShapedImageView
+                android:id="@+id/rectShapedImageView"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/profile"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/circleShapedImageView"
+                app:round_radius="8dp"
+                app:shape_mode="round_rect"
+                app:stroke_color="#009688"
+                app:stroke_width="3dp" />
+
+            <com.custom.image.view.CircleImageViewThree
+                android:id="@+id/circleImageViewThree"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                android:src="@drawable/profile"
+                app:highlightColor="#80fb1743"
+                app:layout_constraintBottom_toTopOf="@+id/avatarImageView"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/rectShapedImageView"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="@dimen/_1sdp" />
+
+            <com.custom.image.view.AvatarImageView
+                android:id="@+id/avatarImageView"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                app:avatarBackgroundColor="#8E24AA"
+                app:highlightEnable="false"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageViewThree"
+                app:strokeColor="#E91E63"
+                app:strokeWidth="@dimen/_10sdp"
+                app:text="R"
+                app:textSize="@dimen/_50sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
